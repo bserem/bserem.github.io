@@ -28,27 +28,40 @@ Note:
 
 * Do you host your websites yourselves?
 
-* Do you use a shared server?
-* * Do you host more than 10 sites? 20? 30?
-* * Are you happy with it?
+* Do you use a shared server?  
+Do you host more than 10 sites? 20? 30?  
+Are you happy with it?  
 
-* Do you maintain your own server?
-* * Can you sleep at night?
+* Do you maintain your own server?  
+Can you sleep at night?
+
+* Do you host any huge sites?  
+100k visits per day  
+DBs bigger than 10g
+
+---
+
+### Achievements
+
+* Organisers of this camp successfully serve more than 100k visitors per day with a 4gb RAM VM using BOA
+* I personally host more than 20 Drupal sites with a 2gb RAM VM. With minimum effort.
+* With proper planning you could go up to a hundred!  
+eg: Small sites, with shared codebase, different content and theming.
 
 ---
 
 ### Happy Moments...
 
 *Me:*
-I would like JSmin to be available on the server. It can be installed with `pecl install jsmin`
+> I would like JSmin to be available on the server. It can be installed with  
+`pecl install jsmin`
 
 *Host:*
-JSMin has to be compiled for each version of PHP. This is possible, but we have to charge this with 60 Euros for 30 minutes of work.
-
-> I also asked for tmux and global drush...
+> JSMin has to be compiled for each version of PHP. This is possible, but we have to charge this with 60 Euros for 30 minutes of work.
 
 Note:
 * This happened on a shared server that costs 200e/month
+* I also asked for tmux and global drush...
 * I can host 30 sites for 3 months with 60 euros
 * We live in 2016, I consider a JS compressor a must have!
 
