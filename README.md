@@ -2,16 +2,23 @@
 
 ### Introduction to BOA
 
-[Bill Seremetis](http://www.srm.gr)  
+Note:
+This session is targeted towards developers,
+designers, sysadmins etc. We will speak about a
+hosting stack, but one that provides such tools that
+would ease things for anybody that deals with Drupal.
+
+---
+
+Bill Seremetis (@bserem)  
 Drupal Implementor  
+night: Black background, thick white text, orange links
 https://www.drupal.org/u/bserem
 
 Note:
-* using Drupal since 2008
-* been working as "one man show" for years. That means development, theming, support, hosting
-* active member of the community (modules, profiles, translations, presentations)
-* worked on several big projects, and many more small ones
-* there was a time where I believe I knew almost every single greek drupal developer
+* working with Drupal since 2008
+* been working as "one man show" for years (dev, theming, support, hosting)
+* active member of the community (modules, profiles, translations, presentations, workshops)
 * the word implementor is a tribute to the creators of Zork
 
 ---
@@ -41,12 +48,91 @@ DBs bigger than 10g
 
 ---
 
+### Path to enlightenment
+
+If you answered yes on the previous slide, except the happy and sleep questions, then BOA might interest you.
+
+BOA is not for the faint of heart. You will have control of your machine, and you will be able to do many great things with it.
+
+---
+
+### What is BOA
+
+> BOA stands for Barracuda, Octopus, Aegir
+
+* Barracuda and Octopus are a set of custom bash scripts and configs, created by [Omega8.cc](http://www.omega8.cc). Open source of course.
+* Barracuda maintains the system and Aegir.
+* Octopus helps you manage your Drupal sites.
+* Aegir is a well known, and mature, system for managing Drupal sites, built on Drupal! It leverages Drupal's multisite capabilities.
+* **The main concept is that it shares code between your sites, so as to lower CPU and RAM usage because of how OPCache works.**
+
+---
+
+### What can BOA do for you?
+
+* With BOA you can worry about Drupal, and not about hosting Drupal.
+* Within minutes you can have a fully working LEMP system, **fine tuned for Drupal**, supporting PHP 5.3 to 7.0, HHVM, MariaDB 10, Redis, HTTP/2 or SPDY, Apache SOLR and a properly configured firewall.
+* Bonus: **self-healing scripts and automated backups** (xdrago and backboa)
+* Extra Bonus: BOA has performance [modules installed](https://github.com/omega8cc/boa/blob/master/docs/MODULES.txt), and sometimes **enabled** by default and transparently (eg entity_cache, redis)
+
+Note:
+* advagg, boost, esi, readyonlymode, securesite are only some of the modules that BOA includes by default **on every site**
+* included means not enabled, but exists for you to enable
+
+---
+
+### Why BOA / BOA Benefits
+
+* it is ~~fast~~ **blazing fast**
+* it is secure*
+* it is 100% open source
+* the project is [maintained on Github](https://github.com/omega8cc/boa), and they are open to suggestions
+* it is based on Debian
+* can be used for development or production, including local development
+* it supports Lets Encrypt! Without you doing anything!
+* it doesn't require you to learn something new*
+* did I say it has [Skynet mode](https://github.com/omega8cc/boa/issues/557)? BOA sites were not affected by Drupalgeddon.
+
+Note:
+* With Docker you must learn how to maintain Docker. Same goes for Vagrant, or any other technology out there.
+* BOA is Drupal and Drush running on GNU/Linux. Nothing fancier, no new commands.
+
+---
+
+### What BOA can't do
+
+* it can't save you from stupidity (sudo rm -rf /)
+* it doesn't offer email accounts
+
+> Fact: you should **NOT** send any email from BOA hosted sites. Use SMTP.
+
+Note:
+* Self healing runs every minute, and can save you from bad permissions
+* If you plan to give shell access to customers, you are secured by self healing scripts
+
+---
+
+### Good to Know
+
+* BOA is extremely fast when you don't need to reach the DB all the time, because of aggressive caching
+* Of course it can be used for sites with constant DB writes too, and has predifined config settings and scripts to create a proper my.cnf file!
+
+Note:
+* dozens of small presentation sites who are usually serving static content, running from a single server
+* Huge sites, with tens of thousands of anonymous visitors (no need to reach the DB)
+
+---
+
 ### Achievements
 
 * Organisers of this camp successfully serve more than 100k visitors per day with a 4gb RAM VM using BOA
 * I personally host more than 20 Drupal sites with a 2gb RAM VM. With minimum effort.
 * With proper planning you could go up to a hundred!  
 eg: Small sites, with shared codebase, different content and theming.
+
+---
+
+![Sites in BOA](https://raw.githubusercontent.com/bserem/bserem.github.io/master/images/sites.jpg)
 
 ---
 
@@ -67,63 +153,14 @@ Note:
 
 ---
 
-### What is BOA
+### BOA is without issues?
 
-> BOA stands for Barracuda, Octopus, Aegir
+####No, certainly not.
 
-* Barracuda and Octopus are a set of custom bash scripts and configs, created by [Omega8.cc](http://www.omega8.cc). Open source of course.
-* Barracuda maintains the system and Aegir.
-* Octopus helps you manage your Drupal sites.
-* Aegir is a well known, and mature, system for managing Drupal sites, built on Drupal! It leverages Drupal's multisite capabilities.
-* **The main concept is that it shares code between your sites, so as to lower CPU and RAM usage because of how OPCache works.**
-
----
-
-### What can it do for you?
-
-* With BOA you can worry about Drupal, and not about hosting Drupal.
-* Within minutes you can have a fully working LEMP system, **fine tuned for Drupal**, supporting PHP 5.3 to 7.0, HHVM, MariaDB 10, Redis, HTTP/2 or SPDY, Apache SOLR and a properly configured firewall.
-* Bonus: **self-healing scripts and automated backups** (xdrago and backboa)
-* Extra Bonus: BOA has performance [modules installed](https://github.com/omega8cc/boa/blob/master/docs/MODULES.txt), and sometimes enabled, by default and transparently (eg entity_cache, redis)
-
-Note:
-advagg, boost, esi, readyonlymode, securesite are only some of the modules that BOA includes by default **on every site**
-
----
-
-### Why BOA / BOA Benefits
-
-* it is ~~fast~~ **blazing fast**
-* it is secure*
-* it is 100% open source
-* the project is [maintained on Github](https://github.com/omega8cc/boa), and they are open to suggestions
-* it is based on Debian
-* can be used for development or production, including local development
-* it supports Lets Encrypt! Without you doing anything!
-* it doesn't require you to learn something new*
-* did I say it has [Skynet mode](https://github.com/omega8cc/boa/issues/557)? BOA sites were not affected by Drupalgeddon.
-
-Note:
-* With Docker you must learn how to maintain Docker. Same goes for Vagrant, or any other technology out there.
-* BOA is Drupal, you already know Drupal!
-
----
-
-### What BOA can't do
-
-* it can't save you from stupidity (sudo rm -rf /)
-* it doesn't offer email accounts
-
-> Fact: you should **NOT** send any email from BOA hosted sites. Use SMTP.
-
-Note:
-*Do not send drupal emails over phpmail.
-
----
-
-### Good to Know
-
-* BOA is extremely fast when you don't need to reach the DB all the time, because of aggressive caching
+Like with any system you maintain:
+* You need to be up to date
+* You need to read the changelog before updates
+* Things can go awfully wrong, especially if you wanna live dangerously (eg: no backups)
 
 ---
 
@@ -135,6 +172,12 @@ Aliases with `.dev.` aren't accesible by bots, and fall into development mode au
 Note:
 * there have been some changes about .dev. urls latelly
 * you can't disable aggregation on a url without .dev. in it
+
+---
+
+### Easy Config
+
+You can configure BOA easily by [touching empty files in the server](https://github.com/omega8cc/boa/blob/5ade4c44a2a305ad5cfab7c9280bd0341df773c4/docs/ctrl/system.ctrl)
 
 ---
 
@@ -155,7 +198,7 @@ projects[drupal][download][url] = "https://ftp.drupal.org/files/projects/drupal-
 ### Real Time Demo
 
 Note:
-* Explain makefiles
+* Explain makefiles https://github.com/drupalcampgr/boa-session/blob/master/makefiles/D744_srm_most_used.make
 * Add two platforms
 * Add a site
 * Clone the site
