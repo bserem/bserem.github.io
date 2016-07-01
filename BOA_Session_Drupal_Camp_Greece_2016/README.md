@@ -12,14 +12,13 @@ would ease things for anybody that deals with Drupal.
 
 Bill Seremetis (@bserem)  
 Drupal Implementor  
-night: Black background, thick white text, orange links
 https://www.drupal.org/u/bserem
 
 Note:
 * working with Drupal since 2008
-* been working as "one man show" for years (dev, theming, support, hosting)
 * active member of the community (modules, profiles, translations, presentations, workshops)
 * the word implementor is a tribute to the creators of Zork
+* been working as "one man show" for years: dev, theming, support, hosting -> had to rely on good servers
 
 ---
 
@@ -50,9 +49,17 @@ DBs bigger than 10g
 
 ### Path to enlightenment
 
-If you answered yes on the previous slide, except the happy and sleep questions, then BOA might interest you.
+If you answered yes on the previous slide, except for the happy and sleep questions, then BOA might interest you.
 
 BOA is not for the faint of heart. You will have control of your machine, and you will be able to do many great things with it.
+
+Note:
+* If you host BOA youselves, you will be root. This is a good thing.
+* If you go for hosted BOA, you have less things to worry for.
+
+---
+
+## BOA
 
 ---
 
@@ -60,9 +67,7 @@ BOA is not for the faint of heart. You will have control of your machine, and yo
 
 > BOA stands for Barracuda, Octopus, Aegir
 
-* Barracuda and Octopus are a set of custom bash scripts and configs, created by [Omega8.cc](http://www.omega8.cc). Open source of course.
-* Barracuda maintains the system and Aegir.
-* Octopus helps you manage your Drupal sites.
+* Barracuda and Octopus are a set of custom bash scripts and configs, created by [Omega8.cc](http://www.omega8.cc). Open source!
 * Aegir is a well known, and mature, system for managing Drupal sites, built on Drupal! It leverages Drupal's multisite capabilities.
 * **The main concept is that it shares code between your sites, so as to lower CPU and RAM usage because of how OPCache works.**
 
@@ -99,6 +104,14 @@ Note:
 
 ---
 
+### Skynet
+
+>Then #drupageddon happened, and we realized that we could make all existing BOA systems secure, auto-magically, in the first 60 minutes after #drupageddon alert was published.
+
+Omega8.cc - 20150105
+
+---
+
 ### What BOA can't do
 
 * it can't save you from stupidity (sudo rm -rf /)
@@ -123,6 +136,14 @@ Note:
 
 ---
 
+### Easy Config
+
+You can configure BOA easily by [touching empty files in the server](https://github.com/omega8cc/boa/blob/5ade4c44a2a305ad5cfab7c9280bd0341df773c4/docs/ctrl/system.ctrl)
+
+BOA has an extensive documendation, that gets better every day.
+
+---
+
 ### Achievements
 
 * Organisers of this camp successfully serve more than 100k visitors per day with a 4gb RAM VM using BOA
@@ -130,9 +151,12 @@ Note:
 * With proper planning you could go up to a hundred!  
 eg: Small sites, with shared codebase, different content and theming.
 
+Note:
+min **suggested** RAM is 2gb, but it also runs with 1
+
 ---
 
-![Sites in BOA](https://raw.githubusercontent.com/bserem/bserem.github.io/master/images/sites.jpg)
+![Sites in BOA](https://raw.githubusercontent.com/bserem/bserem.github.io/master/BOA_Session_Drupal_Camp_Greece_2016/images/sites.jpg)
 
 ---
 
@@ -164,20 +188,20 @@ Like with any system you maintain:
 
 ---
 
-### Dev Stage Production with BOA
+## Aegir
 
-With BOA you easily create clones or migrate/rename sites.
-Aliases with `.dev.` aren't accesible by bots, and fall into development mode automatically.
+---
+
+### Dev Stage Production with Aegir
+
+With Aegir you can easily create clones,  
+migrate or rename sites.  
+
+In BOA aliases with `.dev.` aren't accesible by bots, and fall into development mode automatically.
 
 Note:
 * there have been some changes about .dev. urls latelly
 * you can't disable aggregation on a url without .dev. in it
-
----
-
-### Easy Config
-
-You can configure BOA easily by [touching empty files in the server](https://github.com/omega8cc/boa/blob/5ade4c44a2a305ad5cfab7c9280bd0341df773c4/docs/ctrl/system.ctrl)
 
 ---
 
