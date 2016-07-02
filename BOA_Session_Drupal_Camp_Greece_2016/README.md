@@ -47,6 +47,23 @@ DBs bigger than 10g
 
 ---
 
+### Happy Moments...
+
+*Me:*
+> I would like JSmin to be available on the server. It can be installed with  
+`pecl install jsmin`
+
+*Host:*
+> JSMin has to be compiled for each version of PHP. This is possible, but we have to charge this with 60 Euros for 30 minutes of work.
+
+Note:
+* This happened on a shared server that costs 200e/month
+* I also asked for tmux and global drush...
+* I can host 30 sites for 3 months with 60 euros
+* We live in 2016, I consider a JS compressor a must have!
+
+---
+
 ### Path to enlightenment
 
 If you answered yes on the previous slide, except for the happy and sleep questions, then BOA might interest you.
@@ -157,23 +174,6 @@ min **suggested** RAM is 2gb, but it also runs with 1
 ---
 
 ![Sites in BOA](https://raw.githubusercontent.com/bserem/bserem.github.io/master/BOA_Session_Drupal_Camp_Greece_2016/images/sites.jpg)
-
----
-
-### Happy Moments...
-
-*Me:*
-> I would like JSmin to be available on the server. It can be installed with  
-`pecl install jsmin`
-
-*Host:*
-> JSMin has to be compiled for each version of PHP. This is possible, but we have to charge this with 60 Euros for 30 minutes of work.
-
-Note:
-* This happened on a shared server that costs 200e/month
-* I also asked for tmux and global drush...
-* I can host 30 sites for 3 months with 60 euros
-* We live in 2016, I consider a JS compressor a must have!
 
 ---
 
