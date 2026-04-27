@@ -1,1 +1,279 @@
-<a href="http://bserem.github.io/BOA_Session_Drupal_Camp_Greece_2016">BOA Session @ Drupal Camp Greece 2016</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bill Seremetis — Presentations</title>
+  <style>
+    @font-face {
+      font-family: 'AkkBd';
+      src: url('AkkBd_Pro_1.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #e6e6e6;
+      --surface:   #dadada;
+      --border:    #c2c2c2;
+      --text:      #1a1a1a;
+      --muted:     #333333;
+      --accent:    #c04a12;
+      --accent-lt: #d9622e;
+      --gold:      #7a6010;
+      --akk:       'AkkBd', 'Arial Black', Impact, sans-serif;
+      --mono:      'Courier New', monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--akk);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    main {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 40px 100px;
+      flex: 1;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: rise 0.6s cubic-bezier(0.22,1,0.36,1) 0.05s forwards;
+    }
+
+    .header__logo {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      filter: brightness(0) invert(0) opacity(0.9);
+      margin-top: 4px;
+    }
+
+    .header__text {}
+
+    .header__name {
+      font-family: var(--akk);
+      font-size: clamp(2rem, 5.5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .header__name span {
+      color: var(--accent);
+    }
+
+    .header__role {
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── Divider ── */
+    .rule {
+      height: 1px;
+      background: linear-gradient(to right, var(--accent) 48px, var(--border) 48px);
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: rise 0.5s ease 0.25s forwards;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: rise 0.5s ease 0.35s forwards;
+    }
+
+    /* ── Cards ── */
+    .presentations { list-style: none; display: flex; flex-direction: column; }
+
+    .presentation {
+      opacity: 0;
+    }
+    .presentation:nth-child(1) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 0.45s forwards; }
+    .presentation:nth-child(2) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 0.58s forwards; }
+
+    .card {
+      display: grid;
+      grid-template-columns: 60px 1fr 28px;
+      align-items: center;
+      gap: 24px;
+      padding: 22px 16px 22px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s, padding-left 0.2s;
+      position: relative;
+    }
+
+    .card:first-of-type { border-top: 1px solid var(--border); }
+
+    .card:hover {
+      background: var(--surface);
+      padding-left: 16px;
+    }
+
+    .card:hover .card__arrow { color: var(--accent-lt); opacity: 1; }
+    .card:hover .card__title { color: var(--accent-lt); }
+
+    .card__year {
+      font-family: var(--akk);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #aaaaaa;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      transition: color 0.2s;
+      text-align: right;
+    }
+
+    .card:hover .card__year { color: var(--muted); }
+
+    .card__body {}
+
+    .card__event {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .card__title {
+      font-family: var(--akk);
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
+    .card__sub {
+      margin-top: 5px;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .card__arrow {
+      font-size: 1rem;
+      color: var(--border);
+      opacity: 0.5;
+      transition: color 0.2s, opacity 0.2s;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 28px 40px;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      text-transform: uppercase;
+      display: flex;
+      gap: 24px;
+      opacity: 0;
+      animation: rise 0.5s ease 0.8s forwards;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--gold); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      main { padding: 48px 24px 72px; }
+      .card { grid-template-columns: 48px 1fr; }
+      .card__arrow { display: none; }
+      footer { flex-direction: column; gap: 10px; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <header class="header">
+    <img class="header__logo" src="SRM_logo.svg" alt="SRM logo" aria-hidden="true">
+    <div class="header__text">
+      <h1 class="header__name">Bill<br><span>Seremetis</span></h1>
+      <p class="header__role">Developer &middot; Speaker &middot; Open Source</p>
+    </div>
+  </header>
+
+  <div class="rule"></div>
+
+  <p class="section-label">Presentations</p>
+
+  <ul class="presentations">
+
+    <li class="presentation">
+      <a class="card"
+         href="presentations/DrupalDevDays Athens 2026 - From Chaos to Consistency - DevOps Session.pdf">
+        <span class="card__year">2026</span>
+        <div class="card__body">
+          <p class="card__event">DrupalDevDays Athens</p>
+          <p class="card__title">From Chaos to Consistency</p>
+          <p class="card__sub">PDF &mdash; DevOps Session</p>
+        </div>
+        <span class="card__arrow">↓</span>
+      </a>
+    </li>
+
+    <li class="presentation">
+      <a class="card"
+         href="presentations/Drupal Camp Greece 2016 - Introduction to BOA.pdf">
+        <span class="card__year">2016</span>
+        <div class="card__body">
+          <p class="card__event">Drupal Camp Greece</p>
+          <p class="card__title">Introduction to BOA</p>
+          <p class="card__sub">PDF &mdash; Barracuda, Octopus &amp; Aegir</p>
+        </div>
+        <span class="card__arrow">↓</span>
+      </a>
+    </li>
+
+  </ul>
+</main>
+
+<footer>
+  <a href="https://www.drupal.org/u/bserem">drupal.org/u/bserem</a>
+  <a href="https://github.com/bserem">github.com/bserem</a>
+</footer>
+
+</body>
+</html>
