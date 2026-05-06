@@ -124,6 +124,7 @@
     .presentation:nth-child(6) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 1.10s forwards; }
     .presentation:nth-child(7) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 1.23s forwards; }
     .presentation:nth-child(8) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 1.36s forwards; }
+    .presentation:nth-child(9) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 1.49s forwards; }
 
     .card {
       display: grid;
@@ -218,6 +219,17 @@
     footer a:hover { color: var(--gold); }
 
     .card--no-bottom-border { border-bottom: none; }
+
+    .card--static { cursor: default; }
+    .card--static:hover { background: none; padding-left: 0; }
+    .card--static:hover .card__title { color: var(--text); }
+    .card--static:hover .card__year { color: #aaaaaa; }
+
+    .card__image {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
 
 @keyframes rise {
       from { opacity: 0; transform: translateY(10px); }
@@ -325,6 +337,18 @@
         </div>
         <span class="card__arrow">↓</span>
       </a>
+    </li>
+
+    <li class="presentation">
+      <div class="card card--static">
+        <span class="card__year">2015</span>
+        <div class="card__body">
+          <p class="card__event">PSpace Patras</p>
+          <p class="card__title">Drupal Zero to Hero</p>
+          <p class="card__sub">Workshop</p>
+        </div>
+        <img class="card__image" src="drupal-zero-to-hero-workshop.png" alt="Drupal Zero to Hero workshop">
+      </div>
     </li>
 
     <li class="presentation">
