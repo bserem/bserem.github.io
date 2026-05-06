@@ -119,6 +119,8 @@
     .presentation:nth-child(1) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 0.45s forwards; }
     .presentation:nth-child(2) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 0.58s forwards; }
     .presentation:nth-child(3) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 0.71s forwards; }
+    .presentation:nth-child(4) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 0.84s forwards; }
+    .presentation:nth-child(5) { animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) 0.97s forwards; }
 
     .card {
       display: grid;
@@ -212,7 +214,9 @@
     footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--gold); }
 
-    @keyframes rise {
+    .card--no-bottom-border { border-bottom: none; }
+
+@keyframes rise {
       from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
@@ -278,6 +282,39 @@
           <p class="card__sub">DevOps: Barracuda, Octopus &amp; Aegir (PDF)</p>
         </div>
         <span class="card__arrow">↓</span>
+      </a>
+    </li>
+
+    <li class="presentation">
+      <a class="card"
+         href="presentations/PSpace Patras FOSS Days 2014 - Drupal.pdf">
+        <span class="card__year">2014</span>
+        <div class="card__body">
+          <p class="card__event">PSpace Patras FOSS Days</p>
+          <p class="card__title">Getting Started with Drupal</p>
+          <p class="card__sub">Newbies Introduction (PDF)</p>
+        </div>
+        <span class="card__arrow">↓</span>
+      </a>
+    </li>
+
+    <li class="presentation">
+      <a class="card card--no-bottom-border"
+         href="presentations/PSpace 2013 - Contribute to Open Source Communities - Drupal.pdf">
+        <span class="card__year">2013</span>
+        <div class="card__body">
+          <p class="card__event">PSpace Patras</p>
+          <p class="card__title">Contribute to Drupal</p>
+          <p class="card__sub">FOSS Communities Series: Drupal (PDF)</p>
+        </div>
+        <span class="card__arrow">↓</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/watch?v=K0CW2jMPV0I" target="_blank" rel="noopener">
+        <span class="card__year"></span>
+        <div class="card__body">
+          <p class="card__sub">Watch on YouTube</p>
+        </div>
+        <span class="card__arrow">↗</span>
       </a>
     </li>
 
